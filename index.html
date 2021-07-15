@@ -2492,13 +2492,14 @@ var chartOptions = {
 	scale: {
             min: 0,
             max: 30,
+            maxTicksLimit: 0,
+            ticks: {
+                display: false,
+                maxTicksLimit: 0
+             },
         },
   responsive: true,
-   plugins: {
-      legend: {
-        display: false,
-      }
-    }
+   
 };
 
 var radarChart = new Chart(marksCanvas, {
@@ -2506,6 +2507,7 @@ var radarChart = new Chart(marksCanvas, {
   data: marksData,
   options: chartOptions
 });
+// radarChart.options.scale.ticks.display=false;
 radarChart.options.legend.display = true; 
 	}
 
