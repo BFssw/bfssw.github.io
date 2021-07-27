@@ -2182,9 +2182,9 @@ window.addEventListener('resize', function() {
     </script>
 
     <div class="popupmail" id="popupemaiol" style="display:none;">
-        <form onsubmit="yourJsFunction();return false">
+        <form >
             <input type="email" name="" id="emailinput" placeholder="example@example.ru" required=""><br>
-            <button onclick="sendmm(this)">Послать</button><br>
+            <button type="button" onclick="sendmm(this)">Послать</button><br>
         </form>
         <svg style="    margin-top: 15px;
     height: 25px;
@@ -2451,7 +2451,6 @@ z-index: 2;
 		if (qnum<72){
 			qnum++
 		}else{
-            await sleep(1000);
 			document.querySelector("#seeres").style.display='block';
 		}
 		try {document.querySelector("#\\3"+qjson[qnum]).style.background='#F2C94C'} catch {}
