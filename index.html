@@ -2341,6 +2341,7 @@ z-index: 2;
 		if (qnum<72){
 			qnum++
 		}else{
+            await sleep(1000);
 			document.querySelector("#seeres").style.display='block';
 		}
 		try {document.querySelector("#\\3"+qjson[qnum]).style.background='#F2C94C'} catch {}
