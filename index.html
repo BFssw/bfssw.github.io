@@ -9,6 +9,54 @@
 <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 	<style type="text/css">
 	@media screen and (min-width: 900px) {
+        .popupmail{
+            position: absolute;
+    width: 660px;
+    height: 225px;
+    left: 390px;
+    top: 184px;
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+        background: white;
+            border-radius: 10px;
+    line-height: 140%;
+    text-align: center;
+    color: #FFFFFF;
+    z-index: 5000;
+    box-shadow: 5px -4px 20px 20px black;
+        }
+        .popupmail>form>input{
+            border: #ffffff00;
+    box-shadow: 0 0 10px 0px #00000038;
+    margin-top: 45px;
+        width: 80%;
+    height: 40px;
+        }
+        .popupmail>form>button{
+            border: #ffffff00;
+    box-shadow: 0 0 10px 0px #00000038;
+    margin-top: 45px;
+        width: 80%;
+    height: 40px;
+        background: #f2c94c;
+        }
+        .resulemail{
+                position: absolute;
+    background: white;
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 140%;
+    text-align: center;
+    color: #333333;
+    width: 553px;
+    height: 41px;
+    left: 443px;
+    top: 40px;
+        }
 		.borderv{
 			position: absolute;
 width: 600px;
@@ -1974,6 +2022,21 @@ line-height: 140%;
 /* Gray 1 */
 
 color: #333333;}
+.resulemail{
+    top: 20px;
+    position: absolute;
+    width: 325px;
+    height: 39px;
+    left: 44px;
+    background: white;
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 140%;
+    text-align: center;
+    color: #333333;
+}
 .dro{
 	font-family: PT Sans;
 font-style: normal;
@@ -2026,6 +2089,39 @@ height: 35px;
 left: 285.16px;
 top: 380px;
 }
+.popupmail{
+    box-shadow: 5px -4px 20px 20px black;
+            position: absolute;
+    width: 310px;
+    height: 225px;
+    left: 51px;
+    top: 170px;
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+        background: white;
+            border-radius: 10px;
+    line-height: 140%;
+    text-align: center;
+    color: #FFFFFF;
+    z-index: 5000;
+        }
+        .popupmail>form>input{
+            border: #ffffff00;
+    box-shadow: 0 0 10px 0px #00000038;
+    margin-top: 45px;
+        width: 80%;
+    height: 40px;
+        }
+        .popupmail>form>button{
+            border: #ffffff00;
+    box-shadow: 0 0 10px 0px #00000038;
+    margin-top: 45px;
+        width: 80%;
+    height: 40px;
+        background: #f2c94c;
+        }
 .backsvg{position: absolute;
 width: 22px;
 height: 22px;
@@ -2084,6 +2180,18 @@ window.addEventListener('resize', function() {
 });
       
     </script>
+
+    <div class="popupmail" id="popupemaiol" style="display:none;">
+        <form onsubmit="yourJsFunction();return false">
+            <input type="email" name="" id="emailinput" placeholder="example@example.ru" required=""><br>
+            <button onclick="sendmm(this)">Послать</button><br>
+        </form>
+        <svg style="    margin-top: 15px;
+    height: 25px;
+    width: 295px;" class="closeseotext" onclick="document.querySelector('#popupemaiol').style.display='none'" width="19" height="10" viewBox="0 0 19 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.2857 9.86792L9.5 3.70047L2.71429 9.86792L-6.01032e-08 8.63443L9.5 5.81153e-07L19 8.63443L16.2857 9.86792Z" fill="#FF4444"></path>
+</svg>
+    </div>
     <div class="canvas" id="marksChart2" style="  
 ">
     <canvas style="
@@ -2166,7 +2274,7 @@ z-index: 2;
 	<p class="ccl10">Мудрец (<span id="re32"></span>)</p>
 	<p class="ccl11">Простодушный (<span id="re123"></span>)</p>
 	<p class="ccl12">Бунтарь (<span id="re52"></span>)</p>
-
+<button class="resulemail" onclick="document.querySelector('#popupemaiol').style.display='block'">Отправить результаты по почте</button>
 <svg width="177" height="21" viewBox="0 0 177 21" fill="none" xmlns="http://www.w3.org/2000/svg" class="el12">
 <path d="M176.19 18.8981C176.446 18.793 176.567 18.5009 176.462 18.2455L174.75 14.0839C174.645 13.8285 174.353 13.7067 174.098 13.8118C173.842 13.9168 173.72 14.209 173.825 14.4644L175.347 18.1636L171.648 19.6854C171.393 19.7905 171.271 20.0827 171.376 20.3381C171.481 20.5934 171.773 20.7153 172.029 20.6102L176.19 18.8981ZM0.537604 18.2455C0.432539 18.5009 0.55439 18.793 0.809764 18.8981L4.97133 20.6102C5.22671 20.7153 5.5189 20.5934 5.62396 20.3381C5.72903 20.0827 5.60718 19.7905 5.3518 19.6854L1.65263 18.1636L3.17452 14.4644C3.27958 14.209 3.15773 13.9168 2.90236 13.8118C2.64698 13.7067 2.35479 13.8285 2.24973 14.0839L0.537604 18.2455ZM88.5 1.5C119.439 1.5 148.932 7.68944 175.808 18.8972L176.192 17.9742C149.197 6.71653 119.574 0.5 88.5 0.5V1.5ZM1.19245 18.8972C28.0683 7.68944 57.5607 1.5 88.5 1.5V0.5C57.4262 0.5 27.8032 6.71652 0.807553 17.9742L1.19245 18.8972Z" fill="#C4C4C4"></path>
 </svg>
@@ -2205,6 +2313,9 @@ z-index: 2;
 	<path d="M64.7458 87.9409L292.481 219.424" stroke="#E0E0E0" stroke-width="0.878826" stroke-linecap="round"></path>
 
 	</svg>
+
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js" integrity="sha512-5vwN8yor2fFT9pgPS9p9R7AszYaNn0LkQElTXIsZFCL7ucT8zDCAqlQXDdaqgA1mZP47hdvztBMsIoFxq/FyyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -2316,7 +2427,6 @@ z-index: 2;
 		document.querySelector("#\\34").style.background='#E0E0E0'
 		document.querySelector("#\\35").style.background='#E0E0E0'
 		document.querySelector("#\\3"+parseInt(argument.id)).style.background='#F2C94C'
-		await sleep(200);
 		nextsvg() 
 
 	}
@@ -2514,7 +2624,16 @@ var radarChart = new Chart(marksCanvas, {
 });
 radarChart.options.legend.display = true; 
 	}
+function sendmm(item){
+        var w = self.innerWidth;
+  if (w <900){var v='mob'}else{var v='pc'}
+    fetch("http://109.236.213.1:8919/screen/"+re1+"/"+re2+"/"+re3+"/"+re4+"/"+re5+"/"+re6+"/"+re7+"/"+re8+"/"+re9+"/"+re10+"/"+re11+"/"+re12+"/"+v+"/"+document.querySelector('#emailinput').value)
+    .then(function (response) {
+        return response.text();
+    }).then(function (text) {
+    });
 
+}
 </script>
 
 </body>
