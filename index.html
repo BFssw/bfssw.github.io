@@ -2183,12 +2183,8 @@ window.addEventListener('resize', function() {
 
     <div class="popupmail" id="popupemaiol" style="display:none;">
         <input type="email" name="" id="emailinput" placeholder="example@example.ru" required=""><br>
-        <button type="button" id='
-        buttonsend
-buttonsendok' onclick="sendmm(this)">Послать</button>
-        <button type="button" id='
-        buttonsend
-buttonsendok' style="background:#cbf6cb;display: none;">Послать</button>
+        <button type="button" id='buttonsend' onclick="sendmm(this)">Послать</button>
+        <button type="button" id='buttonsendok' style="background:#cbf6cb;display: none;">Послать</button>
         <br>
         <svg style="    margin-top: 15px;
     height: 25px;
@@ -2639,8 +2635,8 @@ function sendmm(item){
     }).then(function (text) {
         console.log(text);
     });
-    document.querySelector("#buttonsend").style.display='none';
-    document.querySelector("#buttonsendok").style.display='block';
+    document.getElementById("buttonsend").style.display='none';
+    document.getElementById("buttonsendok").style.display='initial';
 
 }
 </script>
