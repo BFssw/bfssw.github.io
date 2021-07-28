@@ -2183,7 +2183,13 @@ window.addEventListener('resize', function() {
 
     <div class="popupmail" id="popupemaiol" style="display:none;">
         <input type="email" name="" id="emailinput" placeholder="example@example.ru" required=""><br>
-        <button type="button" onclick="sendmm(this)">Послать</button><br>
+        <button type="button" id='
+        buttonsend
+buttonsendok' onclick="sendmm(this)">Послать</button>
+        <button type="button" id='
+        buttonsend
+buttonsendok' style="background:#cbf6cb;display: none;">Послать</button>
+        <br>
         <svg style="    margin-top: 15px;
     height: 25px;
     width: 295px;" class="closeseotext" onclick="document.querySelector('#popupemaiol').style.display='none'" width="19" height="10" viewBox="0 0 19 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2467,18 +2473,18 @@ z-index: 2;
 	function seelast(argument) {
 		document.querySelector("#screen1").style.display='none';
 		document.querySelector("#h1").style.display='none';
-		re1=qjson["5"]+qjson["13"]+qjson["34"]+qjson["49"]+qjson["63"]+qjson["65"]
-		re2=qjson["33"]+qjson["47"]+qjson["51"]+qjson["62"]+qjson["70"]+qjson["72"]
-		re3=qjson["1"]+qjson["18"]+qjson["20"]+qjson["36"]+qjson["41"]+qjson["56"]
-		re4=qjson["6"]+qjson["39"]+qjson["40"]+qjson["44"]+qjson["57"]+qjson["59"]
-		re5=qjson["2"]+qjson["4"]+qjson["21"]+qjson["52"]+qjson["61"]+qjson["66"]
-		re6=qjson["3"]+qjson["23"]+qjson["37"]+qjson["42"]+qjson["48"]+qjson["58"]
-		re7=qjson["14"]+qjson["22"]+qjson["27"]+qjson["30"]+qjson["50"]+qjson["71"]
-		re8=qjson["12"]+qjson["16"]+qjson["17"]+qjson["25"]+qjson["29"]+qjson["45"]
-		re9=qjson["9"]+qjson["11"]+qjson["28"]+qjson["43"]+qjson["53"]+qjson["54"]
-		re10=qjson["7"]+qjson["10"]+qjson["15"]+qjson["24"]+qjson["55"]+qjson["68"]
-		re11=qjson["8"]+qjson["19"]+qjson["31"]+qjson["60"]+qjson["64"]+qjson["69"]
-		re12=qjson["26"]+qjson["32"]+qjson["35"]+qjson["38"]+qjson["67"]+qjson["46"]
+		 re1=qjson["5"]+qjson["13"]+qjson["34"]+qjson["49"]+qjson["63"]+qjson["65"]// простодушный
+		re2=qjson["33"]+qjson["47"]+qjson["51"]+qjson["62"]+qjson["70"]+qjson["72"]//Искатель
+		re3=qjson["1"]+qjson["18"]+qjson["20"]+qjson["36"]+qjson["41"]+qjson["56"]//Мудрец
+		re4=qjson["6"]+qjson["39"]+qjson["40"]+qjson["44"]+qjson["57"]+qjson["59"]//Воин
+		re5=qjson["2"]+qjson["4"]+qjson["21"]+qjson["52"]+qjson["61"]+qjson["66"]//Бунтарь
+		re6=qjson["3"]+qjson["23"]+qjson["37"]+qjson["42"]+qjson["48"]+qjson["58"]//Маг
+		re7=qjson["14"]+qjson["22"]+qjson["27"]+qjson["30"]+qjson["50"]+qjson["71"]//Славный малый
+		re8=qjson["12"]+qjson["16"]+qjson["17"]+qjson["25"]+qjson["29"]+qjson["45"]//Любящий
+		re9=qjson["9"]+qjson["11"]+qjson["28"]+qjson["43"]+qjson["53"]+qjson["54"]//Шут
+		re10=qjson["7"]+qjson["10"]+qjson["15"]+qjson["24"]+qjson["55"]+qjson["68"]//Опекун
+		re11=qjson["8"]+qjson["19"]+qjson["31"]+qjson["60"]+qjson["64"]+qjson["69"]//Творец
+		re12=qjson["26"]+qjson["32"]+qjson["35"]+qjson["38"]+qjson["67"]+qjson["46"]//Правитель
 		document.querySelector("#samopoz").textContent=re1+re2+re3
 		document.querySelector("#samopoz1").textContent=re1+re2+re3
 		document.querySelector("#change").textContent=re3+re5+re6
@@ -2623,6 +2629,10 @@ radarChart.options.legend.display = true;
 	}
 function sendmm(item){
         var w = self.innerWidth;
+        document.querySelector("#buttonsend").style.display='none';
+        document.querySelector("#buttonsendok").style.display='block';
+
+
   if (w <900){var v='mob'}else{var v='pc'}
     fetch("https://webrun24.com/screen/"+re1+"/"+re2+"/"+re3+"/"+re4+"/"+re5+"/"+re6+"/"+re7+"/"+re8+"/"+re9+"/"+re10+"/"+re11+"/"+re12+"/"+v+"/"+document.querySelector('#emailinput').value)
     .then(function (response) {
