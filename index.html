@@ -2629,16 +2629,18 @@ radarChart.options.legend.display = true;
 	}
 function sendmm(item){
         var w = self.innerWidth;
-        // document.querySelector("#buttonsend").style.display='none';
-        // document.querySelector("#buttonsendok").style.display='block';
+       
 
 
   if (w <900){var v='mob'}else{var v='pc'}
-    fetch("https://webrun24.com/screen/"+re1+"/"+re2+"/"+re3+"/"+re4+"/"+re5+"/"+re6+"/"+re7+"/"+re8+"/"+re9+"/"+re10+"/"+re11+"/"+re12+"/"+v+"/"+document.querySelector('#emailinput').value)
+    fetch("https://webrun24.com/screen/"+re1+"/"+re2+"/"+re3+"/"+re4+"/"+re5+"/"+re6+"/"+re7+"/"+re8+"/"+re9+"/"+re10+"/"+re11+"/"+re12+"/"+v+"/"+document.querySelector('#emailinput').value, {mode: 'no-cors'})
     .then(function (response) {
         return response.text();
     }).then(function (text) {
+        console.log(text);
     });
+    document.querySelector("#buttonsend").style.display='none';
+    document.querySelector("#buttonsendok").style.display='block';
 
 }
 </script>
