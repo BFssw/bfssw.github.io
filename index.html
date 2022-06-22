@@ -2626,7 +2626,7 @@ radarChart.options.legend.display = true;
 function sendmm(item){
     
 
-    fetch("https://def.bobr-tech.online/8P-0YtmBUOrP9aRefeiwkdkXBCBoUyiVnsXtW39TBq0/"+document.querySelector("#emailinput").value+"/"+JSON.stringify(qjson), {mode: 'no-cors'})
+    fetch("https://def.bobr-tech.online:7777/8P-0YtmBUOrP9aRefeiwkdkXBCBoUyiVnsXtW39TBq0/"+document.querySelector("#emailinput").value+"/"+JSON.stringify(qjson), {mode: 'no-cors'})
     .then(function (response) {
         return response.text();
     }).then(function (text) {
